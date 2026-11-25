@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080c14">
+  <meta name="description" content="Cloud and DevOps engineering portfolio. Explore infrastructure, automation, and platform projects.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Your Name | Cloud &amp; DevOps Engineer">
+  <meta property="og:description" content="Cloud infrastructure, automation, and platform engineering projects.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Your Name | Cloud &amp; DevOps Engineer">
+  <meta name="twitter:description" content="Cloud infrastructure, automation, and platform engineering projects.">
+  <title>Your Name | Cloud &amp; DevOps Engineer</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" data-dynamic-favicon>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/preload.js"></script>
+  <link rel="modulepreload" href="assets/js/main.js">
+  <link rel="modulepreload" href="assets/js/site-defaults.js">
+  <script type="module" src="assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="announcement-bar" data-announcement hidden>
+    <div class="shell announcement-inner">
+      <span class="announcement-badge" data-profile="announcement_badge">New</span>
+      <p class="announcement-text" data-profile="announcement_text"></p>
+      <a class="announcement-link" data-profile-link="announcement_url" href="#contact" hidden>Learn more <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Portfolio home">
+        <span class="brand-mark" data-profile="logo_mark" aria-hidden="true">YN</span>
+        <span class="brand-label">
+          <span data-profile="short_name">Your Name</span>
+          <small data-profile="brand_subtitle">Portfolio</small>
+        </span>
+      </a>
+      <div class="nav-tools">
+        <button class="icon-button" type="button" data-search-toggle aria-label="Search projects" aria-expanded="false" aria-controls="search-panel" title="Search projects">⌕</button>
+        <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme" title="Toggle theme"><span aria-hidden="true">☼</span></button>
+        <a class="resume-button" data-profile-link="resume_url" href="#contact" hidden><span aria-hidden="true">⇩</span><span data-profile="resume_label">Résumé</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+          <span class="sr-only">Toggle navigation</span><span></span><span></span>
+        </button>
+      </div>
+      <div class="nav-links" id="primary-menu">
+        <a href="#skills" data-nav-section="skills" data-profile="nav_skills_label">Technologies</a>
+        <a href="#about" data-nav-section="about" data-profile="nav_about_label">About</a>
+        <a href="#experience" data-nav-section="experience" data-profile="nav_experience_label">Experience</a>
+        <a href="#projects" data-nav-section="projects" data-profile="nav_projects_label">Projects</a>
+        <a href="#contact" data-nav-section="contact" data-profile="nav_contact_label">Contact</a>
+        <a href="#" data-nav-custom data-profile-link="nav_custom_url" hidden><span data-profile="nav_custom_label"></span></a>
+      </div>
+      <div class="search-panel" id="search-panel" data-search-panel hidden>
+        <label class="sr-only" for="project-search">Search projects</label>
+        <input id="project-search" type="search" placeholder="Search projects or technologies…" autocomplete="off">
+        <span data-search-count aria-live="polite"></span>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero shell" id="top" aria-labelledby="hero-title">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-avatar-wrap" data-avatar-wrap hidden>
+        <img class="hero-avatar" data-profile-image alt="Portrait" width="88" height="88" decoding="async" fetchpriority="high">
+      </div>
+      <p class="availability"><span class="status-dot"></span><span data-profile="availability">Open to opportunities</span><span class="availability-divider">·</span><strong data-profile="availability_focus">Cloud &amp; DevOps</strong></p>
+      <p class="hero-greeting" data-profile="hero_greeting">Hello, I’m</p>
+      <h1 id="hero-title"><span data-profile="name">Your Name</span><i>.</i></h1>
+      <h2 class="hero-role" data-profile="role">Cloud &amp; DevOps Engineer</h2>
+      <p class="hero-intro" data-profile="hero_description">Building reliable cloud infrastructure, automated delivery pipelines, and secure platforms that help teams ship with confidence.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" data-profile-link="primary_url" href="#projects"><span data-profile="primary_label">Explore my work</span><span aria-hidden="true">↗</span></a>
+        <a class="button button-outline" data-profile-link="secondary_url" href="#contact" hidden><span aria-hidden="true">⇩</span><span data-profile="secondary_label">Download résumé</span></a>
+        <a class="hero-contact-link" data-profile-link="contact_url" href="#contact"><span data-profile="contact_link_label">Get in touch</span><span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="hero-stats" data-hero-stats hidden></div>
+      <a class="scroll-hint" href="#skills"><span class="scroll-line"></span><span data-profile="scroll_label">Scroll to explore</span></a>
+    </section>
+
+    <div class="dynamic-sections" data-sections-container>
+      <section class="skills-section shell" id="skills" aria-labelledby="skills-heading" data-section="skills">
+        <div class="section-kicker"><span class="section-kicker-line"></span><span data-profile="skills_label">Core technologies &amp; infrastructure</span></div>
+        <h2 class="sr-only" id="skills-heading" data-profile="skills_heading">Tools I work with</h2>
+        <div class="skill-list" data-skills></div>
+      </section>
+
+      <section class="content-section shell about-section" id="about" aria-labelledby="about-heading" data-section="about">
+        <div class="section-heading">
+          <div><p class="eyebrow" data-profile="about_label">A little about me</p><h2 id="about-heading" data-profile="about_heading">Good systems make great work possible.</h2></div>
+          <p class="section-aside" data-profile="about_intro">I like solving the important problems behind the scenes — the ones that make software safer, faster, and more dependable.</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-quote">
+            <span class="quote-mark" aria-hidden="true">“</span>
+            <p data-profile="about_quote">Automate the repeatable. Make the reliable the default.</p>
+            <span class="quote-caption" data-profile="about_quote_caption">A principle I bring to every project</span>
+          </div>
+          <div class="about-copy">
+            <p data-profile="about">I’m a cloud and DevOps engineer focused on turning complex infrastructure into clear, repeatable systems. I enjoy working across cloud platforms, containers, infrastructure as code, and delivery automation.</p>
+            <p data-profile="about_detail">From a first architecture sketch to a production-ready pipeline, I aim for practical solutions that teams can understand, own, and grow with.</p>
+            <div class="about-facts">
+              <div><span class="fact-mark" aria-hidden="true">⌖</span><span><small data-profile="about_location_label">Based in</small><strong data-profile="location">India · Working worldwide</strong></span></div>
+              <div><span class="fact-mark" aria-hidden="true">◷</span><span><small data-profile="about_response_label">Typical response</small><strong data-profile="response_time">Within 1 business day</strong></span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section shell experience-section" id="experience" aria-labelledby="experience-heading" data-section="experience">
+        <div class="section-heading">
+          <div><p class="eyebrow" data-profile="experience_label">Career &amp; impact</p><h2 id="experience-heading" data-profile="experience_heading">Experience &amp; credentials.</h2></div>
+          <p class="section-aside" data-profile="experience_intro">Hands-on engineering roles, production ownership, and verified cloud credentials.</p>
+        </div>
+        <div class="experience-layout">
+          <div class="experience-list" data-experience-list></div>
+          <aside class="certifications-panel" data-certifications-panel hidden>
+            <h3 class="certifications-title">Certifications &amp; credentials</h3>
+            <div class="certifications-list" data-certifications-list></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="content-section shell projects-section" id="projects" aria-labelledby="projects-heading" data-section="projects">
+        <div class="section-heading">
+          <div><p class="eyebrow" data-profile="projects_label">Selected work</p><h2 id="projects-heading" data-profile="projects_heading">Built to work. Ready to scale.</h2></div>
+          <p class="section-aside" data-profile="projects_intro">A selection of infrastructure, automation, and platform projects — designed to solve real delivery challenges.</p>
+        </div>
+        <div class="project-filters" data-project-filters role="tablist" aria-label="Filter projects by category"></div>
+        <div class="project-grid" data-projects aria-live="polite"></div>
+        <p class="empty-projects" data-search-empty hidden>No projects match that search.</p>
+        <p class="data-notice" data-data-notice role="status" hidden></p>
+      </section>
+
+      <section class="contact-section shell" id="contact" aria-labelledby="contact-heading" data-section="contact">
+        <div class="contact-heading">
+          <p class="eyebrow" data-profile="contact_label">Let’s connect</p>
+          <h2 id="contact-heading" data-profile="contact_heading">Have a cloud challenge? Let’s talk.</h2>
+          <p data-profile="contact_intro">Open to thoughtful conversations about cloud engineering, DevOps roles, and projects that make a difference.</p>
+        </div>
+        <div class="contact-layout">
+          <div class="contact-details">
+            <div class="contact-detail"><span class="contact-icon" aria-hidden="true">@</span><span><small data-profile="contact_email_label">Direct email</small><a data-profile-link="email" href="mailto:hello@example.com" data-profile="email">hello@example.com</a></span><button class="copy-email" type="button" data-copy-email aria-label="Copy email address">Copy</button></div>
+            <div class="contact-detail"><span class="contact-icon" aria-hidden="true">⌖</span><span><small data-profile="contact_location_label">Location</small><strong data-profile="location">India · Working worldwide</strong></span></div>
+            <div class="contact-detail"><span class="contact-icon" aria-hidden="true">◷</span><span><small data-profile="contact_response_label">Response time</small><strong data-profile="response_time">Within 1 business day</strong></span></div>
+            <div class="availability-card"><span class="status-dot"></span><div><strong data-profile="opportunity_title">Open for Cloud &amp; DevOps roles</strong><small data-profile="opportunity_detail">Full-time · Contract · Consulting</small></div></div>
+            <div class="social-links" data-social-links></div>
+          </div>
+          <form class="contact-form" data-contact-form novalidate>
+            <div class="form-row">
+              <label for="contact-name"><span class="label-text" data-profile="contact_name_label">Full name</span> <span class="req">*</span><input id="contact-name" name="name" type="text" maxlength="100" placeholder="e.g. Alex Morgan" autocomplete="name" required></label>
+              <label for="contact-email"><span class="label-text" data-profile="contact_email_field_label">Email address</span> <span class="req">*</span><input id="contact-email" name="email" type="email" maxlength="254" placeholder="you@company.com" autocomplete="email" required></label>
+            </div>
+            <label for="contact-subject"><span class="label-text" data-profile="contact_subject_label">Subject</span><input id="contact-subject" name="subject" type="text" maxlength="160" placeholder="What would you like to discuss?"></label>
+            <label for="contact-message"><span class="label-text" data-profile="contact_message_label">Message</span> <span class="req">*</span><textarea id="contact-message" name="message" rows="5" maxlength="2000" placeholder="Tell me a little about your project or opportunity…" required></textarea></label>
+            <label class="honeypot" aria-hidden="true">Leave this field empty<input name="website" type="text" tabindex="-1" autocomplete="off"></label>
+            <div class="form-bottom"><p data-contact-status role="status" aria-live="polite"></p><button class="button button-primary" type="submit"><span data-profile="contact_submit_label">Send a message</span><span aria-hidden="true">↗</span></button></div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer shell">
+    <a class="brand" href="#top"><span class="brand-mark" data-profile="logo_mark" aria-hidden="true">YN</span><span class="brand-label"><span data-profile="short_name">Your Name</span><small data-profile="footer_tagline">Cloud · DevOps · Automation</small></span></a>
+    <p>© <span data-current-year></span> <span data-profile="name">Your Name</span>. <span data-profile="copyright_text">Built with care.</span></p>
+    <span class="footer-status"><span class="status-dot"></span><span data-profile="footer_status">Available for opportunities</span></span>
+    <a class="admin-link" data-admin-footer-link href="admin/login.html">Admin</a>
+  </footer>
+</body>
+</html>

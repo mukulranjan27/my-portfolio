@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <title>Dashboard — Portfolio CMS</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+  <script type="module" src="admin.js"></script>
+</head>
+<body class="admin-page">
+  <div class="dashboard-shell">
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <a class="admin-brand" href="../index.html"><span class="admin-brand-mark" data-admin-mark>YN</span><span>Portfolio CMS</span></a>
+        <button class="sidebar-mobile-toggle" type="button" data-mobile-nav aria-expanded="false" aria-controls="sidebar-nav">Menu</button>
+      </div>
+      <nav class="sidebar-nav" id="sidebar-nav" aria-label="Admin sections">
+        <p class="sidebar-label">Workspace</p>
+        <a class="sidebar-link active" href="#overview"><span aria-hidden="true">◫</span> Overview</a>
+        <a class="sidebar-link" href="#site-settings"><span aria-hidden="true">⚙</span> Site content</a>
+        <a class="sidebar-link" href="#projects-section"><span aria-hidden="true">▧</span> Projects</a>
+        <a class="sidebar-link" href="#messages-section"><span aria-hidden="true">✉</span> Messages</a>
+        <a class="sidebar-link" href="#tools-section"><span aria-hidden="true">⇅</span> Backup &amp; tools</a>
+        <a class="sidebar-preview" href="../index.html" target="_blank" rel="noopener noreferrer"><span>View live site</span><span aria-hidden="true">↗</span></a>
+      </nav>
+      <div class="sidebar-user">
+        <span class="user-avatar" data-admin-mark>YN</span>
+        <span><strong data-admin-email>Administrator</strong><small>Verified admin</small></span>
+      </div>
+    </aside>
+
+    <main class="dashboard-main" id="overview">
+      <header class="dashboard-header">
+        <div>
+          <p class="admin-eyebrow">Your workspace</p>
+          <h1>Everything, <span>in one place.</span></h1>
+        </div>
+        <div class="header-actions">
+          <span class="unsaved-pill" data-unsaved-badge hidden>Unsaved changes</span>
+          <a class="admin-button admin-button-subtle" href="../index.html" target="_blank" rel="noopener noreferrer">Preview site <span aria-hidden="true">↗</span></a>
+          <button class="admin-button admin-button-outline" id="logout-btn" type="button">Sign out</button>
+        </div>
+      </header>
+
+      <div class="admin-alert" data-admin-status role="status" aria-live="polite" hidden></div>
+
+      <section class="welcome-panel">
+        <div>
+          <p class="admin-eyebrow">Full dynamic control</p>
+          <h2>Control every word, section, and project.<br><em>Publish in one click.</em></h2>
+          <p>Update branding, colors, layout order, hero stats, experience, certifications, projects, social links, and contact settings directly from this dashboard.</p>
+        </div>
+        <span class="welcome-spark" aria-hidden="true">✳</span>
+      </section>
+
+      <section class="kpi-grid" aria-label="Portfolio summary">
+        <div class="kpi-card"><small>Published projects</small><strong data-kpi-published>0</strong></div>
+        <div class="kpi-card"><small>Draft projects</small><strong data-kpi-drafts>0</strong></div>
+        <div class="kpi-card"><small>Unread messages</small><strong data-kpi-unread>0</strong></div>
+        <div class="kpi-card"><small>Skills listed</small><strong data-kpi-skills>0</strong></div>
+        <div class="kpi-card"><small>Active sections</small><strong data-kpi-sections>0 / 5</strong></div>
+      </section>
+
+      <section class="dashboard-section" id="site-settings">
+        <div class="section-title">
+          <div><p class="admin-eyebrow">01 / The whole site</p><h2>Site content, theme &amp; layout</h2></div>
+          <span class="section-note">Changes publish immediately after saving</span>
+        </div>
+
+        <form id="profile-form" class="admin-form">
+          <details class="admin-panel settings-group" open>
+            <summary><span>Brand, portrait, SEO &amp; theme colors</span><small>Identity, avatar upload, metadata, dark/light default, and accent colors</small></summary>
+            <div class="form-grid">
+              <div class="field"><label for="p-name">Your name</label><input id="p-name" name="name" maxlength="100" required></div>
+              <div class="field"><label for="p-short-name">Short name in header</label><input id="p-short-name" name="short_name" maxlength="60"></div>
+              <div class="field"><label for="p-brand-subtitle">Header brand subtitle</label><input id="p-brand-subtitle" name="brand_subtitle" maxlength="40" placeholder="Portfolio"></div>
+              <div class="field"><label for="p-logo-mark">Logo initials</label><input id="p-logo-mark" name="logo_mark" maxlength="4"></div>
+              <div class="field"><label for="p-role">Professional title</label><input id="p-role" name="role" maxlength="120" required></div>
+              <div class="field">
+                <label for="p-profile-image">Profile photo / avatar URL</label>
+                <div class="upload-row">
+                  <input id="p-profile-image" name="profile_image_url" maxlength="500" placeholder="https://… or assets/img/…">
+                  <label class="admin-button admin-button-subtle upload-btn">
+                    Upload
+                    <input type="file" accept="image/png,image/jpeg,image/webp,image/avif,image/svg+xml" data-upload-target="p-profile-image" data-upload-folder="avatars" hidden>
+                  </label>
+                </div>
+                <small>Optional circular portrait shown above the hero title.</small>
+              </div>
+              <div class="field field-wide"><label for="p-site-title">Browser / SEO title</label><input id="p-site-title" name="site_title" maxlength="160" required></div>
+              <div class="field field-wide"><label for="p-site-description">Search / social description</label><textarea id="p-site-description" name="site_description" rows="2" maxlength="300"></textarea></div>
+              <div class="field field-wide"><label for="p-og-image">Social preview image URL (og:image)</label><input id="p-og-image" name="og_image_url" maxlength="500" placeholder="https://…"></div>
+              <div class="field">
+                <label for="p-default-theme">Default visitor theme</label>
+                <select id="p-default-theme" name="default_theme">
+                  <option value="dark">Dark (default)</option>
+                  <option value="light">Light</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="p-accent-theme">Accent color preset</label>
+                <select id="p-accent-theme" name="accent_theme">
+                  <option value="green">Emerald / Cyan</option>
+                  <option value="blue">Blue / Cyan</option>
+                  <option value="violet">Violet / Pink</option>
+                  <option value="amber">Amber / Rose</option>
+                  <option value="rose">Rose / Purple</option>
+                  <option value="custom">Custom hex colors</option>
+                </select>
+              </div>
+              <div class="field" data-custom-colors>
+                <label for="p-custom-primary">Custom primary hex</label>
+                <div class="color-pair">
+                  <input id="p-custom-primary-picker" type="color" value="#2de69a" aria-label="Pick primary accent color">
+                  <input id="p-custom-primary" name="custom_accent_primary" maxlength="7" placeholder="#2de69a">
+                </div>
+              </div>
+              <div class="field" data-custom-colors>
+                <label for="p-custom-secondary">Custom secondary hex</label>
+                <div class="color-pair">
+                  <input id="p-custom-secondary-picker" type="color" value="#22c5e9" aria-label="Pick secondary accent color">
+                  <input id="p-custom-secondary" name="custom_accent_secondary" maxlength="7" placeholder="#22c5e9">
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details class="admin-panel settings-group">
+            <summary><span>Navigation, controls &amp; announcement bar</span><small>Rename menu links, add a custom link, or enable a top announcement banner</small></summary>
+            <div class="form-grid">
+              <label class="publish-toggle" for="p-show-search"><input id="p-show-search" name="show_search" type="checkbox"><span>Show header search button</span></label>
+              <label class="publish-toggle" for="p-show-theme-toggle"><input id="p-show-theme-toggle" name="show_theme_toggle" type="checkbox"><span>Show light/dark toggle</span></label>
+              <div class="field"><label for="p-nav-skills">Skills nav label</label><input id="p-nav-skills" name="nav_skills_label" maxlength="40"></div>
+              <div class="field"><label for="p-nav-about">About nav label</label><input id="p-nav-about" name="nav_about_label" maxlength="40"></div>
+              <div class="field"><label for="p-nav-experience">Experience nav label</label><input id="p-nav-experience" name="nav_experience_label" maxlength="40"></div>
+              <div class="field"><label for="p-nav-projects">Projects nav label</label><input id="p-nav-projects" name="nav_projects_label" maxlength="40"></div>
+              <div class="field"><label for="p-nav-contact">Contact nav label</label><input id="p-nav-contact" name="nav_contact_label" maxlength="40"></div>
+              <div class="field"><label for="p-nav-custom-label">Extra custom nav label</label><input id="p-nav-custom-label" name="nav_custom_label" maxlength="40" placeholder="Blog (leave blank to hide)"></div>
+              <div class="field field-wide"><label for="p-nav-custom-url">Extra custom nav URL</label><input id="p-nav-custom-url" name="nav_custom_url" maxlength="500" placeholder="https://…"></div>
+
+              <label class="publish-toggle field-wide" for="p-show-announcement"><input id="p-show-announcement" name="show_announcement" type="checkbox"><span>Show top announcement banner</span></label>
+              <div class="field"><label for="p-announcement-badge">Banner badge</label><input id="p-announcement-badge" name="announcement_badge" maxlength="24" placeholder="New"></div>
+              <div class="field"><label for="p-announcement-url">Banner link</label><input id="p-announcement-url" name="announcement_url" maxlength="500" placeholder="#contact or https://…"></div>
+              <div class="field field-wide"><label for="p-announcement-text">Banner message</label><input id="p-announcement-text" name="announcement_text" maxlength="200"></div>
+            </div>
+          </details>
+
+          <details class="admin-panel settings-group" open>
+            <summary><span>Hero, buttons &amp; highlight stats</span><small>Opening copy, availability pill, action buttons, and key metrics</small></summary>
+            <div class="form-grid">
+              <div class="field"><label for="p-hero-greeting">Greeting</label><input id="p-hero-greeting" name="hero_greeting" maxlength="80"></div>
+              <div class="field"><label for="p-availability">Availability status</label><input id="p-availability" name="availability" maxlength="100"></div>
+              <div class="field"><label for="p-availability-focus">Availability specialty</label><input id="p-availability-focus" name="availability_focus" maxlength="80"></div>
+              <div class="field"><label for="p-scroll-label">Scroll hint</label><input id="p-scroll-label" name="scroll_label" maxlength="80"></div>
+              <div class="field field-wide"><label for="p-hero-description">Hero introduction</label><textarea id="p-hero-description" name="hero_description" rows="3" maxlength="500"></textarea></div>
+              <div class="field"><label for="p-primary-label">Main button label</label><input id="p-primary-label" name="primary_label" maxlength="60"></div>
+              <div class="field"><label for="p-primary-url">Main button link</label><input id="p-primary-url" name="primary_url" maxlength="500" placeholder="#projects or https://…"></div>
+              <div class="field"><label for="p-secondary-label">Résumé button label</label><input id="p-secondary-label" name="secondary_label" maxlength="60"></div>
+              <div class="field"><label for="p-secondary-url">Résumé button link</label><input id="p-secondary-url" name="secondary_url" maxlength="500" placeholder="https://… (leave blank to hide)"></div>
+              <div class="field"><label for="p-resume-label">Header résumé label</label><input id="p-resume-label" name="resume_label" maxlength="40"></div>
+              <div class="field"><label for="p-resume-url">Header résumé link</label><input id="p-resume-url" name="resume_url" maxlength="500" placeholder="https://… (leave blank to hide)"></div>
+              <div class="field"><label for="p-contact-link-label">Contact link label</label><input id="p-contact-link-label" name="contact_link_label" maxlength="50"></div>
+              <div class="field"><label for="p-contact-url">Contact link target</label><input id="p-contact-url" name="contact_url" maxlength="500" placeholder="#contact"></div>
+
+              <label class="publish-toggle field-wide" for="p-show-hero-stats"><input id="p-show-hero-stats" name="show_hero_stats" type="checkbox"><span>Show hero highlight metrics strip</span></label>
+              <div class="field field-wide">
+                <div class="repeater-header">
+                  <label>Hero highlight metrics</label>
+                  <button class="admin-button admin-button-subtle admin-button-sm" type="button" data-add-stat>+ Add metric</button>
+                </div>
+                <div class="repeater-list" data-stats-list></div>
+              </div>
+            </div>
+          </details>
+
+          <details class="admin-panel settings-group">
+            <summary><span>Technologies &amp; about section</span><small>Skills tags, biography, quote, location, and response details</small></summary>
+            <div class="form-grid">
+              <label class="publish-toggle field-wide" for="p-show-skills"><input id="p-show-skills" name="show_skills" type="checkbox"><span>Show technology section</span></label>
+              <div class="field"><label for="p-skills-label">Technologies label</label><input id="p-skills-label" name="skills_label" maxlength="100"></div>
+              <div class="field"><label for="p-skills-heading">Technologies heading</label><input id="p-skills-heading" name="skills_heading" maxlength="120"></div>
+              <div class="field field-wide"><label for="p-skills">Technology tags</label><textarea id="p-skills" name="skills" rows="3" placeholder="AWS, Kubernetes, Docker, Terraform"></textarea><small>Separate each technology with a comma or new line.</small></div>
+
+              <label class="publish-toggle field-wide" for="p-show-about"><input id="p-show-about" name="show_about" type="checkbox"><span>Show about section</span></label>
+              <div class="field"><label for="p-about-label">About label</label><input id="p-about-label" name="about_label" maxlength="80"></div>
+              <div class="field"><label for="p-about-heading">About heading</label><input id="p-about-heading" name="about_heading" maxlength="180"></div>
+              <div class="field field-wide"><label for="p-about-intro">About section intro</label><textarea id="p-about-intro" name="about_intro" rows="2" maxlength="400"></textarea></div>
+              <div class="field field-wide"><label for="p-about-quote">Featured quote</label><textarea id="p-about-quote" name="about_quote" rows="2" maxlength="240"></textarea></div>
+              <div class="field field-wide"><label for="p-about-quote-caption">Quote caption</label><input id="p-about-quote-caption" name="about_quote_caption" maxlength="120"></div>
+              <div class="field field-wide"><label for="p-about">About paragraph</label><textarea id="p-about" name="about" rows="4" maxlength="900"></textarea></div>
+              <div class="field field-wide"><label for="p-about-detail">Second about paragraph</label><textarea id="p-about-detail" name="about_detail" rows="3" maxlength="700"></textarea></div>
+              <div class="field"><label for="p-about-location-label">Location fact label</label><input id="p-about-location-label" name="about_location_label" maxlength="60"></div>
+              <div class="field"><label for="p-location">Location value</label><input id="p-location" name="location" maxlength="120"></div>
+              <div class="field"><label for="p-about-response-label">Response fact label</label><input id="p-about-response-label" name="about_response_label" maxlength="60"></div>
+              <div class="field"><label for="p-response-time">Typical response time</label><input id="p-response-time" name="response_time" maxlength="80"></div>
+            </div>
+          </details>
+
+          <details class="admin-panel settings-group">
+            <summary><span>Experience &amp; certifications</span><small>Career timeline entries and verified credentials</small></summary>
+            <div class="form-grid">
+              <label class="publish-toggle field-wide" for="p-show-experience"><input id="p-show-experience" name="show_experience" type="checkbox"><span>Show experience &amp; credentials section</span></label>
+              <div class="field"><label for="p-experience-label">Experience label</label><input id="p-experience-label" name="experience_label" maxlength="80"></div>
+              <div class="field"><label for="p-experience-heading">Experience heading</label><input id="p-experience-heading" name="experience_heading" maxlength="180"></div>
+              <div class="field field-wide"><label for="p-experience-intro">Experience introduction</label><textarea id="p-experience-intro" name="experience_intro" rows="2" maxlength="400"></textarea></div>
+
+              <div class="field field-wide">
+                <div class="repeater-header">
+                  <label>Experience timeline</label>
+                  <button class="admin-button admin-button-subtle admin-button-sm" type="button" data-add-experience>+ Add role</button>
+                </div>
+                <div class="repeater-list" data-experience-editor></div>
+              </div>
+
+              <div class="field field-wide">
+                <div class="repeater-header">
+                  <label>Certifications &amp; credentials</label>
+                  <button class="admin-button admin-button-subtle admin-button-sm" type="button" data-add-cert>+ Add credential</button>
+                </div>
+                <div class="repeater-list" data-certs-editor></div>
+              </div>
+            </div>
+          </details>
+
+          <details class="admin-panel settings-group">
+            <summary><span>Projects section &amp; page section order</span><small>Projects labels, search copy, and the order sections appear on the page</small></summary>
+            <div class="form-grid">
+              <label class="publish-toggle field-wide" for="p-show-projects"><input id="p-show-projects" name="show_projects" type="checkbox"><span>Show projects section</span></label>
+              <div class="field"><label for="p-projects-label">Projects label</label><input id="p-projects-label" name="projects_label" maxlength="80"></div>
+              <div class="field"><label for="p-projects-heading">Projects heading</label><input id="p-projects-heading" name="projects_heading" maxlength="180"></div>
+              <div class="field field-wide"><label for="p-projects-intro">Projects introduction</label><textarea id="p-projects-intro" name="projects_intro" rows="3" maxlength="400"></textarea></div>
+              <div class="field"><label for="p-projects-search-placeholder">Search input placeholder</label><input id="p-projects-search-placeholder" name="projects_search_placeholder" maxlength="100"></div>
+              <div class="field"><label for="p-projects-empty-message">Empty search message</label><input id="p-projects-empty-message" name="projects_empty_message" maxlength="120"></div>
+
+              <div class="field field-wide">
+                <label>Page section order</label>
+                <div class="order-list" data-section-order-list></div>
+                <small>Reorder how sections appear below the hero on the public website.</small>
+              </div>
+            </div>
+          </details>
+
+          <details class="admin-panel settings-group">
+            <summary><span>Contact, social links &amp; footer</span><small>Contact copy, form labels, all social profiles, and footer visibility</small></summary>
+            <div class="form-grid">
+              <label class="publish-toggle field-wide" for="p-show-contact"><input id="p-show-contact" name="show_contact" type="checkbox"><span>Show contact section</span></label>
+              <div class="field"><label for="p-contact-label">Contact label</label><input id="p-contact-label" name="contact_label" maxlength="80"></div>
+              <div class="field"><label for="p-contact-heading">Contact heading</label><input id="p-contact-heading" name="contact_heading" maxlength="180"></div>
+              <div class="field field-wide"><label for="p-contact-intro">Contact introduction</label><textarea id="p-contact-intro" name="contact_intro" rows="2" maxlength="400"></textarea></div>
+              <div class="field"><label for="p-contact-email-label">Email card label</label><input id="p-contact-email-label" name="contact_email_label" maxlength="60"></div>
+              <div class="field"><label for="p-email">Contact email address</label><input id="p-email" name="email" type="email" maxlength="254"></div>
+              <div class="field"><label for="p-contact-location-label">Location card label</label><input id="p-contact-location-label" name="contact_location_label" maxlength="60"></div>
+              <div class="field"><label for="p-contact-response-label">Response card label</label><input id="p-contact-response-label" name="contact_response_label" maxlength="60"></div>
+              <div class="field"><label for="p-opportunity-title">Availability card title</label><input id="p-opportunity-title" name="opportunity_title" maxlength="100"></div>
+              <div class="field"><label for="p-opportunity-detail">Availability details</label><input id="p-opportunity-detail" name="opportunity_detail" maxlength="120"></div>
+              <div class="field"><label for="p-contact-name-label">Form name label</label><input id="p-contact-name-label" name="contact_name_label" maxlength="60"></div>
+              <div class="field"><label for="p-contact-email-field-label">Form email label</label><input id="p-contact-email-field-label" name="contact_email_field_label" maxlength="60"></div>
+              <div class="field"><label for="p-contact-subject-label">Form subject label</label><input id="p-contact-subject-label" name="contact_subject_label" maxlength="60"></div>
+              <div class="field"><label for="p-contact-message-label">Form message label</label><input id="p-contact-message-label" name="contact_message_label" maxlength="60"></div>
+              <div class="field"><label for="p-contact-submit-label">Contact form button label</label><input id="p-contact-submit-label" name="contact_submit_label" maxlength="60"></div>
+
+              <div class="field"><label for="p-github">GitHub URL</label><input id="p-github" name="github_url" maxlength="500" placeholder="https://github.com/…"></div>
+              <div class="field"><label for="p-linkedin">LinkedIn URL</label><input id="p-linkedin" name="linkedin_url" maxlength="500" placeholder="https://linkedin.com/in/…"></div>
+              <div class="field"><label for="p-x">X / Twitter URL</label><input id="p-x" name="x_url" maxlength="500" placeholder="https://x.com/…"></div>
+              <div class="field"><label for="p-website">Website / Blog URL</label><input id="p-website" name="website_url" maxlength="500" placeholder="https://…"></div>
+              <div class="field field-wide"><label for="p-youtube">YouTube URL</label><input id="p-youtube" name="youtube_url" maxlength="500" placeholder="https://youtube.com/@…"></div>
+
+              <div class="field field-wide">
+                <div class="repeater-header">
+                  <label>Custom social / profile links</label>
+                  <button class="admin-button admin-button-subtle admin-button-sm" type="button" data-add-social>+ Add link</button>
+                </div>
+                <div class="repeater-list" data-socials-editor></div>
+              </div>
+
+              <div class="field"><label for="p-footer-tagline">Footer tagline</label><input id="p-footer-tagline" name="footer_tagline" maxlength="100"></div>
+              <div class="field"><label for="p-copyright-text">Footer note</label><input id="p-copyright-text" name="copyright_text" maxlength="100"></div>
+              <div class="field"><label for="p-footer-status">Footer availability text</label><input id="p-footer-status" name="footer_status" maxlength="100"></div>
+              <label class="publish-toggle" for="p-show-admin-link"><input id="p-show-admin-link" name="show_admin_link" type="checkbox"><span>Show “Admin” link in footer</span></label>
+            </div>
+          </details>
+
+          <div class="form-footer">
+            <p>Changes are live for all visitors immediately after saving.</p>
+            <button class="admin-button admin-button-primary" type="submit">Save all site content <span aria-hidden="true">→</span></button>
+          </div>
+        </form>
+      </section>
+
+      <section class="dashboard-section" id="projects-section">
+        <div class="section-title">
+          <div><p class="admin-eyebrow">02 / Your work</p><h2>Manage projects</h2></div>
+          <span class="section-note">Create, reorder, upload previews, duplicate, publish, or archive projects</span>
+        </div>
+        <div class="project-admin-layout">
+          <div class="admin-panel project-list-panel">
+            <div class="panel-heading">
+              <h3>Your projects</h3>
+              <span data-project-count>0 projects</span>
+            </div>
+            <div class="list-toolbar">
+              <input id="admin-project-search" type="search" placeholder="Filter projects…" aria-label="Filter admin projects">
+              <div class="filter-tabs" data-project-filter-tabs>
+                <button type="button" class="filter-tab is-active" data-project-filter="all">All</button>
+                <button type="button" class="filter-tab" data-project-filter="published">Published</button>
+                <button type="button" class="filter-tab" data-project-filter="draft">Drafts</button>
+              </div>
+            </div>
+            <div class="admin-project-list" data-admin-projects></div>
+          </div>
+
+          <form id="project-form" class="admin-panel admin-form project-editor">
+            <div class="panel-heading"><h3 data-project-form-title>Add a project</h3></div>
+            <input id="project-id" name="id" type="hidden">
+            <div class="field"><label for="project-title">Project name</label><input id="project-title" name="title" maxlength="120" required></div>
+            <div class="field-row">
+              <div class="field"><label for="project-category">Category</label><input id="project-category" name="category" maxlength="80" placeholder="Cloud infrastructure"></div>
+              <div class="field"><label for="project-year">Year</label><input id="project-year" name="year" maxlength="12" placeholder="2025"></div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="project-status">Project status</label>
+                <select id="project-status" name="status">
+                  <option value="Live">Live</option>
+                  <option value="Production">Production</option>
+                  <option value="Open Source">Open Source</option>
+                  <option value="Case Study">Case Study</option>
+                  <option value="In Progress">In Progress</option>
+                  <option value="Archived">Archived</option>
+                </select>
+              </div>
+              <div class="field"><label for="project-impact">Impact / metric highlight</label><input id="project-impact" name="impact" maxlength="120" placeholder="e.g. 60% faster deploys"></div>
+            </div>
+            <div class="field"><label for="project-description">Description</label><textarea id="project-description" name="description" rows="4" maxlength="500" required></textarea></div>
+            <div class="field"><label for="project-tech">Technology tags</label><input id="project-tech" name="tech_stack" maxlength="300" placeholder="AWS, Terraform, Kubernetes"><small>Separate each item with a comma.</small></div>
+            <div class="field">
+              <label for="project-image">Project preview image URL</label>
+              <div class="upload-row">
+                <input id="project-image" name="image_url" maxlength="500" placeholder="https://…">
+                <label class="admin-button admin-button-subtle upload-btn">
+                  Upload
+                  <input type="file" accept="image/png,image/jpeg,image/webp,image/avif,image/svg+xml" data-upload-target="project-image" data-upload-folder="projects" hidden>
+                </label>
+              </div>
+            </div>
+            <div class="field"><label for="project-live">Live project URL</label><input id="project-live" name="live_url" maxlength="500" placeholder="https://…"></div>
+            <div class="field"><label for="project-github">Repository or case study URL</label><input id="project-github" name="github_url" maxlength="500" placeholder="https://…"></div>
+            <div class="field-row">
+              <div class="field"><label for="project-order">Display order</label><input id="project-order" name="sort_order" type="number" min="0" step="1" value="0"></div>
+              <div class="checkbox-stack">
+                <label class="publish-toggle" for="project-featured"><input id="project-featured" name="is_featured" type="checkbox"><span>Featured highlight</span></label>
+                <label class="publish-toggle" for="project-published"><input id="project-published" name="is_published" type="checkbox" checked><span>Published on portfolio</span></label>
+              </div>
+            </div>
+            <div class="editor-actions">
+              <button class="admin-button admin-button-primary" type="submit" data-project-submit>Save project <span aria-hidden="true">→</span></button>
+              <button class="admin-button admin-button-quiet" type="button" data-cancel-edit hidden>Cancel edit</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="dashboard-section" id="messages-section">
+        <div class="section-title">
+          <div><p class="admin-eyebrow">03 / Inbox</p><h2>Contact messages</h2></div>
+          <span class="section-note">Messages submitted from your public contact form</span>
+        </div>
+        <div class="admin-panel messages-panel">
+          <div class="panel-heading">
+            <h3>Recent messages</h3>
+            <div class="filter-tabs" data-message-filter-tabs>
+              <button type="button" class="filter-tab is-active" data-message-filter="all">All</button>
+              <button type="button" class="filter-tab" data-message-filter="unread">Unread</button>
+            </div>
+            <span data-message-count>0 messages</span>
+          </div>
+          <div class="message-list" data-admin-messages></div>
+        </div>
+      </section>
+
+      <section class="dashboard-section" id="tools-section">
+        <div class="section-title">
+          <div><p class="admin-eyebrow">04 / Backup &amp; utilities</p><h2>Export, import &amp; cache</h2></div>
+          <span class="section-note">Download a full JSON backup or restore site configuration</span>
+        </div>
+        <div class="admin-panel tools-grid">
+          <div class="tool-card">
+            <h3>Export portfolio backup</h3>
+            <p>Download all site content, theme settings, experience, credentials, and projects as a single JSON file.</p>
+            <button class="admin-button admin-button-subtle" type="button" id="export-backup-btn">Download JSON backup</button>
+          </div>
+          <div class="tool-card">
+            <h3>Import configuration JSON</h3>
+            <p>Load a previously exported backup JSON into the site form (review and click Save to publish).</p>
+            <label class="admin-button admin-button-subtle upload-btn">
+              Choose JSON file
+              <input type="file" id="import-backup-input" accept="application/json,.json" hidden>
+            </label>
+          </div>
+          <div class="tool-card">
+            <h3>Clear visitor cache</h3>
+            <p>Clear your browser’s cached portfolio snapshot so the next preview fetches fresh data directly from Supabase.</p>
+            <button class="admin-button admin-button-quiet" type="button" id="clear-cache-btn">Clear local cache</button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="dashboard-footer">Your work, your words. <a href="../index.html">Back to portfolio ↗</a></footer>
+    </main>
+  </div>
+</body>
+</html>
